@@ -243,7 +243,6 @@ function randomColor() {
 // On each node, call func(node).
 
 function walkTheDOM(node) {
-    console.log(node);
     for (let child of node.childNodes) {
         walkTheDOM(child);
     }
