@@ -242,9 +242,10 @@ function randomColor() {
 // This function should traverse every node in the DOM. Use recursion.
 // On each node, call func(node).
 
-function walkTheDOM(node) {
+function walkTheDOM(node, func) {
+    func(node);
     for (let child of node.childNodes) {
-        walkTheDOM(child);
+        walkTheDOM(child, func);
     }
 }
 
@@ -259,4 +260,4 @@ favColor();
 employeePeekaboo();
 currentTime();
 randomColor();
-walkTheDOM(document);
+walkTheDOM(document, node => console.log(node));
