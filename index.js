@@ -172,7 +172,7 @@ function favColor() {
     let colors = document.getElementsByName('favoriteColor');
     
     for (let color of colors) {
-        color.onchange = () => {
+        color.addEventListener('click', () => {
             let body = document.getElementsByTagName('body')[0];
             body.bgColor = color.value;
             if (value === null) {
@@ -181,7 +181,7 @@ function favColor() {
                 alert(`So you like ${color.value} more than ${value} now?`);
             }
             value = color.value;
-        }
+        });
     }
 }
 
